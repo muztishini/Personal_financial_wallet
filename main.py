@@ -21,10 +21,10 @@ def balance():
                 total_income += amount
             elif 'Расход' in lines[lines.index(line) - 1]:
                 total_expense += amount
-    balance = total_income - total_expense
+    balnce = total_income - total_expense
     print(f"Сумма доходов: {total_income}")
     print(f"Сумма расходов: {total_expense}")
-    print(f"Баланс: {balance}")
+    print(f"Баланс: {balnce}")
 
 
 def add_record():
@@ -33,7 +33,6 @@ def add_record():
     summa = float(input("Введите сумму: "))
     desc = input("Введите описание: ")
     rec = Record(date, cat, summa, desc)
-    # print(rec)
     with open('wallet.txt', "a") as file:
         file.write(str(rec) + "\n")
         print("Запись добавлена")
