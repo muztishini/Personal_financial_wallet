@@ -1,9 +1,9 @@
-def search_record(search_key, search_value):
+def search_record(search_key: str, search_value: str) -> list:
 	with open('wallet.txt', 'r') as file:
-		lines = file.readlines()
+		lines: list = file.readlines()
 
-	found_records = []
-	record = {}
+	found_records: list = []
+	record: dict = {}
 	for line in lines:
 		if line.strip():
 			key, value = line.strip().split('=')
@@ -18,13 +18,13 @@ def search_record(search_key, search_value):
 	return found_records
 
 
-def find_record():
+def find_record() -> None:
 	while True:
-		search_key = input("Введите параметр поиска (0 - Выход): ")
+		search_key: str = input("Введите параметр поиска (0 - Выход): ")
 		if search_key == "0":
 			return
-		search_value = input("Введите значение поиска: ")
-		found_records = search_record(search_key, search_value)
+		search_value: str = input("Введите значение поиска: ")
+		found_records: list = search_record(search_key, search_value)
 		if found_records:
 			print("Найденные записи:\n")
 			for item in found_records:

@@ -3,7 +3,7 @@ from editrecord import edit_record
 
 
 class Record:
-	def __init__(self, date, cat, summa, desc) -> None:
+	def __init__(self, date: str, cat: str, summa: float, desc: str) -> None:
 		self.date = date
 		self.cat = cat
 		self.summa = summa
@@ -13,30 +13,30 @@ class Record:
 		return f"Дата={self.date}\nКатегория={self.cat}\nСумма={self.summa}\nОписание={self.desc}\n"
 
 
-def balance():
-	total_income = 0
-	total_expense = 0
+def balance() -> None:
+	total_income: int = 0
+	total_expense: int = 0
 	with open('wallet.txt', 'r') as file:
-		lines = file.readlines()
+		lines: list = file.readlines()
 	for line in lines:
 		if line.startswith('Сумма='):
-			amount = float(line.split('=')[1])
+			amount: float = float(line.split('=')[1])
 			if 'Доход' in lines[lines.index(line) - 1]:
 				total_income += amount
 			elif 'Расход' in lines[lines.index(line) - 1]:
 				total_expense += amount
-	balnce = total_income - total_expense
+	balnce: int = total_income - total_expense
 	print(f"Сумма доходов: {total_income}")
 	print(f"Сумма расходов: {total_expense}")
 	print(f"Баланс: {balnce}")
 
 
-def add_record():
-	date = input("Введите дату: ")
-	cat = input("Введите категорию: ")
-	summa = float(input("Введите сумму: "))
-	desc = input("Введите описание: ")
-	rec = Record(date, cat, summa, desc)
+def add_record() -> None:
+	date: str = input("Введите дату: ")
+	cat: str = input("Введите категорию: ")
+	summa: float = float(input("Введите сумму: "))
+	desc: str = input("Введите описание: ")
+	rec: Record = Record(date, cat, summa, desc)
 	with open('wallet.txt', "a") as file:
 		file.write(str(rec) + "\n")
 		print("Запись добавлена")
@@ -50,7 +50,7 @@ def main():
 		print("3. Редактирование записи")
 		print("4. Поиск по записям")
 		print("0. Выход")
-		oper = int(input("? "))
+		oper: int = int(input("? "))
 		match oper:
 			case 1:
 				balance()
