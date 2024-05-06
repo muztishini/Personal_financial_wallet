@@ -22,15 +22,14 @@ def find_record():
 	while True:
 		search_key = input("Введите параметр поиска (0 - Выход): ")
 		if search_key == "0":
-			break
+			return
 		search_value = input("Введите значение поиска: ")
-		# search_key = "Сумма"
-		# search_value = '23.0'
 		found_records = search_record(search_key, search_value)
 		if found_records:
 			print("Найденные записи:\n")
 			for item in found_records:
 				print(
 					f"Дата={item['Дата']}\nКатегория={item['Категория']}\nСумма={item['Сумма']}\nОписание={item['Описание']}\n")
+				return
 		else:
 			print('Запись не найдена.')
