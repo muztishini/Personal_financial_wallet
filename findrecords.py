@@ -15,7 +15,6 @@ def search_record(search_key, search_value):
 
 	if record.get(search_key) == search_value:
 		found_records.append(record)
-
 	return found_records
 
 
