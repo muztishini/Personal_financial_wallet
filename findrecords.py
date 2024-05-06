@@ -1,3 +1,4 @@
+# функция поиска записи
 def search_record(search_key: str, search_value: str) -> list:
 	with open('wallet.txt', 'r') as file:
 		lines: list = file.readlines()
@@ -18,6 +19,7 @@ def search_record(search_key: str, search_value: str) -> list:
 	return found_records
 
 
+# основная функция поиска записи, запросы параметров поиска
 def find_record() -> None:
 	while True:
 		search_key: str = input("Введите параметр поиска (0 - Выход): ")

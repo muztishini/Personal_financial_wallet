@@ -13,6 +13,7 @@ class Record:
 		return f"Дата={self.date}\nКатегория={self.cat}\nСумма={self.summa}\nОписание={self.desc}\n"
 
 
+# функция подсчета расходов и доходов, а так же вычесления баланса
 def balance() -> None:
 	total_income: int = 0
 	total_expense: int = 0
@@ -31,6 +32,7 @@ def balance() -> None:
 	print(f"Баланс: {balnce}")
 
 
+# функция добавления записи
 def add_record() -> None:
 	date: str = input("Введите дату: ")
 	cat: str = input("Введите категорию: ")
@@ -42,6 +44,7 @@ def add_record() -> None:
 		print("Запись добавлена")
 
 
+# главная функция
 def main():
 	while True:
 		print("Какую операцию хотите выполнить:")

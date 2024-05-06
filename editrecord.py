@@ -1,6 +1,7 @@
 from findrecords import find_record
 
 
+# функция редактирования записи
 def edit_record() -> None:
 	while True:
 		print("Какую запись хотите отредактировать? ")
