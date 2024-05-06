@@ -1,4 +1,6 @@
 from findrecords import find_record
+from editrecord import edit_record
+
 
 class Record:
 	def __init__(self, date, cat, summa, desc) -> None:
@@ -38,10 +40,6 @@ def add_record():
 	with open('wallet.txt', "a") as file:
 		file.write(str(rec) + "\n")
 		print("Запись добавлена")
-
-
-def edit_record():
-	pass
 
 
 def main():
